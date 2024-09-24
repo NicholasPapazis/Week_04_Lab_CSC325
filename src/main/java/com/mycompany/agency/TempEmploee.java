@@ -1,47 +1,36 @@
 package com.mycompany.agency;
 
-
-
-    // TODO 1: Make TempEmploee a child of StaffEmploee
-
-public class TempEmploee 
-{
+public class TempEmploee extends StaffEmploee {
     private int hoursWorked;
 
-    //-----------------------------------------------------------------
-    //  Constructor: Sets up this hourly employee using the specified
-    //  information.
-    //-----------------------------------------------------------------
+    // Constructor
     public TempEmploee(String eName, String eAddress, String ePhone,
-            String socSecNumber, double rate)
-    {
+                       String socSecNumber, double rate) {
         super(eName, eAddress, ePhone, socSecNumber, rate);
-
         hoursWorked = 0;
     }
 
-    //-----------------------------------------------------------------
-    // TODO2: Adds the specified number of hours to this employee's
-    //  accumulated hours.
-    //-----------------------------------------------------------------
-    public void addHours(int moreHours)
-    {
-        
+    // Adds the specified number of hours to this employee's accumulated hours.
+    public void addHours(int moreHours) {
+        hoursWorked += moreHours;
     }
 
-    //-----------------------------------------------------------------
-    // TODO3: Computes and returns the pay for this hourly employee.
-    //-----------------------------------------------------------------
-    public double pay()
-    {
-
+    // Computes and returns the pay for this hourly employee.
+    @Override
+    public double pay() {
+        return hoursWorked * getPayRate();
     }
 
-    //-----------------------------------------------------------------
-    // TODO4: Returns information about this hourly employee as a string.
-    //-----------------------------------------------------------------
-    public String toString()
-    {
-
+    // Returns information about this hourly employee as a string.
+    @Override
+    public String toString() {
+        return "Employee - \n" +
+                "Name: " + getName() + "\n" +
+                "Address: " + getAddress() + "\n" +
+                "Phone: " + getPhone() + "\n" +
+                "Social Security Number: " + getSocialSecurityNumber() + "\n" +
+                "Current hours: " + hoursWorked + "\n" +
+                "Paid: " + String.format("%.2f", pay()) + "\n" +
+                "----------------------------------------";
     }
 }
