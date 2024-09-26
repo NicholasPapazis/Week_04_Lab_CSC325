@@ -11,7 +11,7 @@ public class TempEmploee extends StaffEmployee {
         hoursWorked = 0;
     }
 
-    // Adds the specified number of hours to this employee's accumulated hours
+    // Adds the specified number of hours to this employee's accumulated hours.
     public void addHours(int moreHours) {
         hoursWorked += moreHours;
     }
