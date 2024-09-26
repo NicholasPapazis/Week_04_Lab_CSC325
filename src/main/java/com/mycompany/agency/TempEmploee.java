@@ -11,18 +11,18 @@ public class TempEmploee extends StaffEmployee {
         hoursWorked = 0;
     }
 
-    // Adds the specified number of hours to this employee's accumulated hours.
+    // Adds the specified number of hours to this employee's accumulated hours
     public void addHours(int moreHours) {
         hoursWorked += moreHours;
     }
 
-    // Computes and returns the pay for this hourly employee.
+    // Computes and returns the pay for this hourly employee
     @Override
     public double pay() {
         return hoursWorked * getPayRate();
     }
 
-    // Returns information about this hourly employee as a string.
+    // Returns information about this hourly employee as a string
     @Override
     public String toString() {
         return "Employee - \n" +
